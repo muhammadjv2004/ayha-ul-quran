@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahya ul Quran Online Academy</title>
+<meta name="description" content="Ahya ul Quran Online Academy: online Quran, Tajweed, Hadith, Islamic Studies and Arabic classes for children and adults worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#4FA3DC; --sky-soft:#DDEEFA; --sky-mist:#F1F8FD; --white:#FFFFFF;
+  --navy:#1D4A6E; --navy-deep:#12324D; --ink:#1B2F40; --muted:#5C7083; --line:#CFE3F2;
+  --silver:#A9C9DF;
+  --display:"Cormorant Garamond",Georgia,serif; --body:Manrope,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--sky);outline-offset:4px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);color:var(--navy-deep);line-height:1.1;font-weight:600}
+h1{font-size:clamp(2.6rem,6.2vw,4.9rem);letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4vw,3.2rem);margin-bottom:.8rem}
+h3{font-size:1.5rem;margin-bottom:.4rem}
+p{max-width:62ch}
+section{padding:clamp(72px,10vw,120px) 6vw;position:relative}
+.wrap{max-width:1160px;margin:0 auto}
+.kicker{font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sky);margin-bottom:.8rem}
+.lead{color:var(--muted);font-size:1.06rem;margin-bottom:2.6rem}
+.tint{background:var(--sky-mist)}
+.pattern{background-color:var(--sky-mist);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cg fill='none' stroke='%234FA3DC' stroke-opacity='.14'%3E%3Cpath d='M45 4l11 30 30-11-11 30 30 11-30 11 11 30-30-11-11 30-11-30-30 11 11-30-30-11 30-11-11-30 30 11z'/%3E%3Ccircle cx='45' cy='45' r='12'/%3E%3C/g%3E%3C/svg%3E")}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.95rem 1.7rem;border-radius:999px;font-weight:700;font-size:.92rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .25s,color .25s,transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-blue{background:var(--navy);color:#fff}
+.btn-blue:hover{background:var(--navy-deep)}
+.btn-sky{background:var(--sky);color:#fff}
+.btn-sky:hover{background:#3C92CC}
+.btn-line{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn-wa{background:#25D366;color:#063}
+.btn-wa:hover{background:#1EBE5A}
+.btn-sm{padding:.6rem 1.1rem;font-size:.85rem}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0 6vw}
+.nav{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;min-width:0}
+.brand svg{width:52px;height:52px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.brand-text .nm{font-family:var(--display);font-weight:700;font-size:1.3rem;color:var(--navy-deep);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-text .sub{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sky);font-weight:700;margin-top:3px}
+nav ul{display:flex;gap:1.4rem;list-style:none;align-items:center}
+nav a{text-decoration:none;font-size:.9rem;font-weight:600;color:var(--ink);position:relative;padding:.25rem 0}
+nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;border-radius:2px;background:var(--sky);transition:width .3s}
+nav a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:.6rem}
+.lang{background:var(--white);border:1.5px solid var(--sky);color:var(--navy);padding:.45rem .95rem;font-weight:700;cursor:pointer;font-size:.85rem;border-radius:999px;font-family:inherit}
+.lang:hover{background:var(--sky);color:#fff}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:.5rem}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#EAF5FD 0%,#FFFFFF 100%);text-align:center;padding-top:clamp(70px,9vw,110px);padding-bottom:clamp(80px,10vw,120px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cg fill='none' stroke='%234FA3DC' stroke-opacity='.12'%3E%3Cpath d='M45 4l11 30 30-11-11 30 30 11-30 11 11 30-30-11-11 30-11-30-30 11 11-30-30-11 30-11-11-30 30 11z'/%3E%3Ccircle cx='45' cy='45' r='12'/%3E%3C/g%3E%3C/svg%3E");-webkit-mask:linear-gradient(180deg,#000 0%,transparent 80%);mask:linear-gradient(180deg,#000 0%,transparent 80%)}
+.hero .wrap{position:relative;z-index:1}
+.bismillah{font-family:Amiri,serif;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--sky);margin-bottom:1.4rem}
+.hero h1{color:var(--navy-deep);max-width:16ch;margin:0 auto 1.2rem}
+.hero h1 span{color:var(--sky);font-style:italic}
+.hero .sum{margin:0 auto 2.4rem;color:var(--muted);font-size:1.1rem;max-width:58ch}
+.ctas{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.frame{margin:3.2rem auto 0;width:min(320px,72vw);aspect-ratio:3/4;border-radius:999px 999px 16px 16px;padding:10px;background:linear-gradient(170deg,#fff,var(--sky-soft));box-shadow:0 24px 50px -20px rgba(29,74,110,.35)}
+.frame-in{width:100%;height:100%;border-radius:999px 999px 10px 10px;background:linear-gradient(170deg,#6DB6E8,var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+.frame-in svg{width:82%;height:auto}
+.frame-tag{font-family:Amiri,serif;font-size:1.3rem;color:#E4F2FC}
+.stats{display:flex;gap:2.8rem;justify-content:center;flex-wrap:wrap;margin-top:2.8rem}
+.stats b{display:block;font-family:var(--display);font-size:2.1rem;color:var(--navy);font-weight:600;line-height:1}
+.stats span{font-size:.85rem;color:var(--muted)}
+
+/* about */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:center}
+.about-text{font-size:1.1rem;color:var(--ink);margin-bottom:1.4rem}
+.tagline{margin-top:1.6rem;padding:1.4rem 1.6rem;border-left:3px solid var(--sky);background:var(--white);font-family:var(--display);font-style:italic;font-size:1.45rem;color:var(--navy);box-shadow:0 10px 30px -18px rgba(29,74,110,.3)}
+.values{display:grid;gap:1rem}
+.val{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.4rem 1.6rem;display:grid;grid-template-columns:44px 1fr;gap:1rem;align-items:start}
+.val .ic{width:44px;height:44px;border-radius:50%;background:var(--sky-soft);display:grid;place-items:center;color:var(--navy)}
+.val p{color:var(--muted);font-size:.95rem}
+.val h3{font-size:1.25rem;margin-bottom:.2rem}
+
+/* courses */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.cat{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2rem 1.8rem;box-shadow:0 14px 34px -24px rgba(29,74,110,.35);display:flex;flex-direction:column}
+.cat .ic{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#7CC0EE,var(--sky));display:grid;place-items:center;color:#fff;margin-bottom:1.1rem}
+.cat .ar{font-family:Amiri,serif;font-size:1.5rem;color:var(--sky);direction:rtl;margin-top:.1rem}
+.cat ul{list-style:none;margin:.9rem 0 1.4rem;flex:1}
+.cat li{padding:.5rem 0 .5rem 1.4rem;position:relative;border-bottom:1px dashed var(--line);font-size:.95rem;color:var(--ink)}
+.cat li:last-child{border-bottom:0}
+.cat li::before{content:"";position:absolute;left:0;top:1.05rem;width:7px;height:7px;border-radius:50%;background:var(--sky)}
+.cat .btn{align-self:flex-start}
+.fee-note{margin-top:2.2rem;text-align:center;color:var(--muted);font-size:.95rem;background:var(--sky-mist);border:1px dashed var(--silver);border-radius:16px;padding:1.2rem 1.4rem}
+
+/* classes */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.step{background:#fff;border-radius:20px;padding:2rem 1.7rem;border:1px solid var(--line);text-align:left}
+.step .n{font-family:var(--display);font-size:2.4rem;color:var(--sky);line-height:1;margin-bottom:.6rem}
+.step p{color:var(--muted);font-size:.95rem}
+
+/* teachers */
+.teach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.2rem 1.7rem;text-align:center;box-shadow:0 14px 34px -26px rgba(29,74,110,.4)}
+.portrait{width:120px;height:120px;margin:0 auto 1.2rem;border-radius:50%;background:linear-gradient(170deg,#9FD0F2,var(--navy));display:grid;place-items:center;color:#fff;font-family:Amiri,serif;font-size:2.4rem;border:4px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.tcard .role{font-size:.78rem;font-weight:700;color:var(--sky);letter-spacing:.05em;margin-bottom:.6rem;text-transform:uppercase}
+.tcard p{color:var(--muted);font-size:.93rem;margin:0 auto}
+
+/* payment */
+.pay-box{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:26px;padding:3rem;box-shadow:0 18px 40px -28px rgba(29,74,110,.35)}
+.methods{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.methods span{background:var(--sky-mist);border:1px solid var(--line);border-radius:999px;padding:.4rem .95rem;font-size:.85rem;font-weight:600;color:var(--navy)}
+.secure{font-size:.88rem;color:var(--muted);margin-top:1rem}
+.pay-side{text-align:center;padding:2.2rem;border-radius:20px;background:linear-gradient(170deg,#EAF5FD,#fff);border:1px solid var(--line)}
+.pay-side p{color:var(--muted);margin-bottom:1.2rem}
+
+/* admission */
+.admit-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:4rem;align-items:start}
+.flow{list-style:none;margin-top:1.8rem;display:grid;gap:1rem}
+.flow li{display:grid;grid-template-columns:42px 1fr;gap:1rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem 1.1rem}
+.flow .num{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700}
+form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;background:#fff;border:1px solid var(--line);border-radius:24px;padding:2.4rem;box-shadow:0 18px 40px -28px rgba(29,74,110,.35)}
+form .full{grid-column:1/-1}
+label{display:block;font-size:.85rem;font-weight:700;margin-bottom:.35rem;color:var(--navy)}
+input,select,textarea{width:100%;font:inherit;padding:.8rem .95rem;border:1px solid #BCD8EC;background:#fff;color:var(--ink);border-radius:12px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sky);box-shadow:0 0 0 3px rgba(79,163,220,.2)}
+textarea{min-height:96px;resize:vertical}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.contact-grid .c{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.2rem 1.6rem;text-align:center}
+.contact-grid .c .ic{width:52px;height:52px;margin:0 auto 1rem;border-radius:50%;background:var(--sky-soft);display:grid;place-items:center;color:var(--navy)}
+.contact-grid a{color:var(--navy);font-weight:700;text-decoration:none;font-size:1.05rem}
+.contact-grid a:hover{color:var(--sky)}
+
+footer{background:var(--navy-deep);color:#B7D3E8;padding:3rem 6vw 2.4rem;font-size:.9rem}
+footer .inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+footer .nm{font-family:var(--display);font-size:1.3rem;color:#fff;font-weight:600}
+
+.float-wa{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:.55rem;padding:.8rem 1.2rem;border-radius:999px;background:#25D366;color:#063;font-weight:700;text-decoration:none;box-shadow:0 10px 26px rgba(0,0,0,.2);font-size:.9rem}
+.float-wa svg{width:22px;height:22px;flex:none}
+
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero .wrap>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .wrap>*:nth-child(2){animation-delay:.1s}.hero .wrap>*:nth-child(3){animation-delay:.2s}.hero .wrap>*:nth-child(4){animation-delay:.3s}.hero .wrap>*:nth-child(5){animation-delay:.4s}
+
+@media (max-width:1000px){
+  .cat-grid,.teach-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  nav ul{position:fixed;top:80px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#fff;padding:1.2rem 6vw 1.8rem;border-bottom:1px solid var(--line);display:none;gap:1.1rem;box-shadow:0 20px 30px -20px rgba(29,74,110,.3)}
+  nav ul.open{display:flex}
+  .menu-btn{display:block}
+  .split,.admit-wrap,.pay-box{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .brand svg{width:44px;height:44px}
+  .brand-text .nm{font-size:1.05rem}
+  .brand-text .sub{font-size:.58rem}
+  .nav-right .btn-wa{display:none}
+  .cat-grid,.teach-grid{grid-template-columns:1fr}
+  form{grid-template-columns:1fr;padding:1.6rem}
+  .pay-box{padding:1.8rem}
+  .hero .ctas .btn{width:100%}
+  .float-wa span{display:none}
+  .float-wa{padding:.95rem;border-radius:50%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Urdu */
+[dir=rtl] body,[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3,[dir=rtl] p,[dir=rtl] li,[dir=rtl] label,[dir=rtl] .brand-text .nm,[dir=rtl] .kicker,[dir=rtl] .tagline,[dir=rtl] .tcard .role,[dir=rtl] .lead,[dir=rtl] footer .nm{font-family:"Noto Nastaliq Urdu",serif;letter-spacing:0;text-transform:none}
+[dir=rtl] body{font-size:17px;line-height:2.1}
+[dir=rtl] h1,[dir=rtl] h2,[dir=rtl] h3{line-height:1.7}
+[dir=rtl] .brand,[dir=rtl] .nav-right{flex-direction:row-reverse}
+[dir=rtl] .brand-text{align-items:flex-end;text-align:right}
+[dir=rtl] .val{grid-template-columns:1fr 44px;text-align:right}
+[dir=rtl] .flow li{grid-template-columns:1fr 42px;text-align:right}
+[dir=rtl] .cat li{padding:.5rem 1.4rem .5rem 0;text-align:right}
+[dir=rtl] .cat li::before{left:auto;right:0}
+[dir=rtl] .float-wa{right:auto;left:20px}
+[dir=rtl] nav a::after{left:auto;right:0}
+[dir=rtl] .tagline{border-left:0;border-right:3px solid var(--sky)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home" aria-label="Ahya ul Quran Online Academy home">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD6F5"/><stop offset="1" stop-color="#3B8FCC"/></linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E7DBA"/><stop offset="1" stop-color="#1D4A6E"/></linearGradient>
+        </defs>
+        <path d="M60 4 L116 60 L60 116 L4 60Z" fill="none" stroke="url(#g1)" stroke-width="2.5"/>
+        <path d="M22 110V52C22 26 40 12 60 12s38 14 38 40v58Z" fill="url(#g2)"/>
+        <path d="M34 98V58c0-14 10-22 26-22s26 8 26 22v40" fill="none" stroke="#9FD6F5" stroke-width="1" opacity=".55"/>
+        <path d="M38 66c8-3 16-2 22 2 6-4 14-5 22-2v26c-8-3-16-2-22 2-6-4-14-5-22-2z" fill="#FFFFFF"/>
+        <path d="M60 68v24" stroke="#1D4A6E" stroke-width="1.2"/>
+        <circle cx="60" cy="30" r="4" fill="url(#g1)"/>
+      </svg>
+      <span class="brand-text">
+        <span class="nm" data-name></span>
+        <span class="sub" data-sub>Online Quran Academy</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#home" data-en="Home" data-ur="ہوم">Home</a></li>
+        <li><a href="#about" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a></li>
+        <li><a href="#courses" data-en="Courses" data-ur="کورسز">Courses</a></li>
+        <li><a href="#teachers" data-en="Our Teachers" data-ur="ہمارے اساتذہ">Our Teachers</a></li>
+        <li><a href="#admission" data-en="Admission" data-ur="داخلہ">Admission</a></li>
+        <li><a href="#contact" data-en="Contact Us" data-ur="رابطہ">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="lang" id="langBtn" aria-label="Switch language">اردو</button>
+      <a class="btn btn-wa btn-sm" data-wa href="#">WhatsApp</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="wrap">
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <h1 id="h1">Bringing the <span>Light of the Quran</span> to hearts around the world</h1>
+    <p class="sum" data-en="Online Quran education for children and adults worldwide, with correct pronunciation, Tajweed and Islamic values, through convenient live classes." data-ur="دنیا بھر کے بچوں اور بڑوں کے لیے آن لائن قرآنی تعلیم، درست تلفظ، تجوید اور اسلامی اقدار کے ساتھ، آسان لائیو کلاسز کے ذریعے۔">Online Quran education for children and adults worldwide, with correct pronunciation, Tajweed and Islamic values, through convenient live classes.</p>
+    <div class="ctas">
+      <a class="btn btn-blue" href="#admission" data-en="Apply for Admission" data-ur="داخلے کے لیے درخواست دیں">Apply for Admission</a>
+      <a class="btn btn-line" href="#courses" data-en="Explore Courses" data-ur="کورسز دیکھیں">Explore Courses</a>
+    </div>
+    <div class="frame" aria-hidden="true">
+      <div class="frame-in">
+        <svg viewBox="0 0 200 120">
+          <path d="M100 18C78 10 50 12 16 26v84c34-14 62-12 84-4 22-8 50-10 84 4V26c-34-14-62-16-84-8z" fill="#FFFFFF"/>
+          <path d="M100 18v88" stroke="#4FA3DC" stroke-width="1.5"/>
+          <g stroke="#A9C9DF" stroke-width="1.2" fill="none"><path d="M32 46h54M32 60h54M32 74h54M32 88h48M114 46h54M114 60h54M114 74h54M114 88h48"/></g>
+        </svg>
+        <div class="frame-tag">القرآن الکریم</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div><b>5</b><span data-en="Course areas" data-ur="کورس شعبے">Course areas</span></div>
+      <div><b>Live</b><span data-en="Online classes" data-ur="آن لائن کلاسز">Online classes</span></div>
+      <div><b>Global</b><span data-en="Students worldwide" data-ur="دنیا بھر کے طلبہ">Students worldwide</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap split">
+    <div>
+      <p class="kicker" data-en="About us" data-ur="ہمارے بارے میں">About us</p>
+      <h2 data-en="Ahya ul Quran Online Academy" data-ur="احیاء القرآن آن لائن اکیڈمی">Ahya ul Quran Online Academy</h2>
+      <p class="about-text" data-en="Ahya ul Quran Online Academy provides online Quran education for children and adults around the world. Our aim is to help students learn the Holy Quran with correct pronunciation, Tajweed, and Islamic values through convenient online classes." data-ur="احیاء القرآن آن لائن اکیڈمی دنیا بھر کے بچوں اور بڑوں کو آن لائن قرآنی تعلیم فراہم کرتی ہے۔ ہمارا مقصد طلبہ کو درست تلفظ، تجوید اور اسلامی اقدار کے ساتھ قرآن کریم سیکھنے میں مدد دینا ہے، آسان آن لائن کلاسز کے ذریعے۔">Ahya ul Quran Online Academy provides online Quran education for children and adults around the world. Our aim is to help students learn the Holy Quran with correct pronunciation, Tajweed, and Islamic values through convenient online classes.</p>
+      <div class="tagline" data-en="Bringing the Light of the Quran to Hearts Around the World." data-ur="قرآن کا نور دنیا بھر کے دلوں تک۔">Bringing the Light of the Quran to Hearts Around the World.</div>
+    </div>
+    <div class="values">
+      <div class="val"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/></svg></div><div><h3 data-en="Correct recitation" data-ur="درست تلاوت">Correct recitation</h3><p data-en="Makharij, Tajweed and clear pronunciation from the first lesson." data-ur="پہلے سبق سے مخارج، تجوید اور واضح تلفظ۔">Makharij, Tajweed and clear pronunciation from the first lesson.</p></div></div>
+      <div class="val"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3 data-en="Learn from anywhere" data-ur="کہیں سے بھی سیکھیں">Learn from anywhere</h3><p data-en="Convenient live classes for families in every time zone." data-ur="ہر ٹائم زون کے خاندانوں کے لیے آسان لائیو کلاسز۔">Convenient live classes for families in every time zone.</p></div></div>
+      <div class="val"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><div><h3 data-en="Islamic values" data-ur="اسلامی اقدار">Islamic values</h3><p data-en="Quran, Hadith and character taught together with care." data-ur="قرآن، حدیث اور اخلاق، سب ایک ساتھ، محبت کے ساتھ۔">Quran, Hadith and character taught together with care.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" class="tint pattern">
+  <div class="wrap">
+    <p class="kicker" data-en="Our courses" data-ur="ہمارے کورسز">Our courses</p>
+    <h2 data-en="Courses of study" data-ur="تعلیمی کورسز">Courses of study</h2>
+    <p class="lead" data-en="Five areas of study, from the first Noorani Qaida lesson to advanced Islamic and Arabic studies." data-ur="پانچ تعلیمی شعبے، نورانی قاعدہ کے پہلے سبق سے لے کر اعلیٰ اسلامی اور عربی علوم تک۔">Five areas of study, from the first Noorani Qaida lesson to advanced Islamic and Arabic studies.</p>
+    <div class="cat-grid">
+      <article class="cat">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h10a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/></svg></div>
+        <h3 data-en="Qur'an Studies" data-ur="قرآن کے علوم">Qur'an Studies</h3>
+        <ul>
+          <li>Noorani Qaida and Qur'an Reading</li>
+          <li>Tajweed</li>
+          <li>Qur'an Translation</li>
+          <li>Tafsir-ul-Qur'an</li>
+        </ul>
+        <a class="btn btn-blue btn-sm" href="#admission" data-en="Enroll" data-ur="داخلہ لیں">Enroll</a>
+      </article>
+      <article class="cat">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h11v18H6zM9 8h5M9 12h5"/></svg></div>
+        <h3 data-en="Hadith Studies" data-ur="حدیث کے علوم">Hadith Studies</h3>
+        <ul>
+          <li>Introduction to Hadith</li>
+          <li>Selected Ahadith with Urdu and English Translation</li>
+          <li>Explanation of Hadith (Sharh al-Hadith)</li>
+          <li>Forty Hadith of Imam al-Nawawi</li>
+          <li>Riyad-us-Saliheen</li>
+          <li>Study of Hadith Sciences (Ulum al-Hadith)</li>
+        </ul>
+        <a class="btn btn-blue btn-sm" href="#admission" data-en="Enroll" data-ur="داخلہ لیں">Enroll</a>
+      </article>
+      <article class="cat">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+        <h3 data-en="Islamic Guidance" data-ur="اسلامی رہنمائی">Islamic Guidance</h3>
+        <ul>
+          <li>Daily Islamic Guidance</li>
+          <li>Guidance on Personal and Family Matters</li>
+          <li>Islamic Manners and Ethics</li>
+          <li>Spiritual Development and Self-Purification</li>
+          <li>Guidance on Contemporary Issues</li>
+          <li>Islamic Guidance for Youth</li>
+        </ul>
+        <a class="btn btn-blue btn-sm" href="#admission" data-en="Enroll" data-ur="داخلہ لیں">Enroll</a>
+      </article>
+      <article class="cat">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 5-9 5-9-5zM7 11v5c0 2 2.5 3 5 3s5-1 5-3v-5"/></svg></div>
+        <h3 data-en="Islamic Studies" data-ur="اسلامیات">Islamic Studies</h3>
+        <ul>
+          <li>Aqeedah (Islamic Creed)</li>
+          <li>Seerah of Prophet Muhammad ﷺ</li>
+          <li>Lives of the Sahabah</li>
+          <li>Islamic History</li>
+          <li>Islamic Studies for Children</li>
+        </ul>
+        <a class="btn btn-blue btn-sm" href="#admission" data-en="Enroll" data-ur="داخلہ لیں">Enroll</a>
+      </article>
+      <article class="cat">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h10M9 4v2M6 6c1 4 3 6 6 7M12 6c-1 4-3 6-6 7M13 20l4-9 4 9M14.5 17h5"/></svg></div>
+        <h3 data-en="Arabic Language" data-ur="عربی زبان">Arabic Language</h3>
+        <ul>
+          <li>Arabic for Beginners</li>
+          <li>Arabic Grammar (Nahw and Sarf)</li>
+          <li>Arabic Reading and Translation</li>
+          <li>Classical Arabic Literature</li>
+        </ul>
+        <a class="btn btn-blue btn-sm" href="#admission" data-en="Enroll" data-ur="داخلہ لیں">Enroll</a>
+      </article>
+    </div>
+    <p class="fee-note" data-en="Fees are shown on enquiry. Message us on WhatsApp for the current fee for your chosen course." data-ur="فیس کی تفصیل دریافت کرنے پر بتائی جاتی ہے۔ اپنے منتخب کورس کی فیس کے لیے واٹس ایپ پر پیغام دیں۔">Fees are shown on enquiry. Message us on WhatsApp for the current fee for your chosen course.</p>
+  </div>
+</section>
+
+<section id="teachers">
+  <div class="wrap">
+    <p class="kicker" data-en="Our teachers" data-ur="ہمارے اساتذہ">Our teachers</p>
+    <h2 data-en="Qualified and caring teachers" data-ur="مستند اور شفیق اساتذہ">Qualified and caring teachers</h2>
+    <p class="lead" data-en="Replace these profiles with your teachers' names, qualifications and photos." data-ur="ان پروفائلز کو اپنے اساتذہ کے نام، اسناد اور تصاویر سے بدلیں۔">Replace these profiles with your teachers' names, qualifications and photos.</p>
+    <div class="teach-grid">
+      <div class="tcard"><div class="portrait">ق</div><h3>Teacher Name</h3><div class="role" data-en="Qur'an and Tajweed" data-ur="قرآن اور تجوید">Qur'an and Tajweed</div><p data-en="Qualification and years of teaching experience." data-ur="اسناد اور تدریسی تجربہ۔">Qualification and years of teaching experience.</p></div>
+      <div class="tcard"><div class="portrait">ع</div><h3>Teacher Name</h3><div class="role" data-en="Hadith and Islamic Studies" data-ur="حدیث اور اسلامیات">Hadith and Islamic Studies</div><p data-en="Qualification and years of teaching experience." data-ur="اسناد اور تدریسی تجربہ۔">Qualification and years of teaching experience.</p></div>
+      <div class="tcard"><div class="portrait">ع</div><h3>Teacher Name</h3><div class="role" data-en="Arabic Language" data-ur="عربی زبان">Arabic Language</div><p data-en="Qualification and years of teaching experience." data-ur="اسناد اور تدریسی تجربہ۔">Qualification and years of teaching experience.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <p class="kicker" data-en="Online classes" data-ur="آن لائن کلاسز">Online classes</p>
+    <h2 data-en="How online classes work" data-ur="آن لائن کلاسز کیسے ہوتی ہیں">How online classes work</h2>
+    <p class="lead" data-en="A phone, tablet or laptop and a stable internet connection are all you need." data-ur="ایک فون، ٹیبلٹ یا لیپ ٹاپ اور مستحکم انٹرنیٹ کافی ہے۔">A phone, tablet or laptop and a stable internet connection are all you need.</p>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3 data-en="Live classes" data-ur="لائیو کلاسز">Live classes</h3><p data-en="Interactive sessions with a teacher, one-to-one or in small groups." data-ur="استاد کے ساتھ انٹرایکٹو سیشن، ون ٹو ون یا چھوٹے گروپ میں۔">Interactive sessions with a teacher, one-to-one or in small groups.</p></div>
+      <div class="step"><div class="n">02</div><h3 data-en="Timings for your time zone" data-ur="آپ کے ٹائم زون کے مطابق اوقات">Timings for your time zone</h3><p data-en="Choose a slot that suits your family, wherever you live." data-ur="جہاں بھی آپ رہتے ہوں، اپنے خاندان کے مطابق وقت چنیں۔">Choose a slot that suits your family, wherever you live.</p></div>
+      <div class="step"><div class="n">03</div><h3 data-en="Safe and supervised" data-ur="محفوظ اور زیرِ نگرانی">Safe and supervised</h3><p data-en="Parents are welcome to join any class to observe." data-ur="والدین کسی بھی کلاس میں شامل ہو کر دیکھ سکتے ہیں۔">Parents are welcome to join any class to observe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="payment">
+  <div class="wrap pay-box">
+    <div>
+      <p class="kicker" data-en="Payments" data-ur="ادائیگی">Payments</p>
+      <h2 data-en="Secure online payment" data-ur="محفوظ آن لائن ادائیگی">Secure online payment</h2>
+      <p class="lead" style="margin-bottom:0" data-en="Pay your course fee from anywhere. Enrollment is confirmed once payment is received." data-ur="اپنے کورس کی فیس کہیں سے بھی ادا کریں۔ ادائیگی موصول ہونے پر داخلہ کی تصدیق ہو جاتی ہے۔">Pay your course fee from anywhere. Enrollment is confirmed once payment is received.</p>
+      <div class="methods"><span>Debit / Credit Card</span><span>JazzCash</span><span>Easypaisa</span><span>Bank Transfer</span><span>PayPal</span></div>
+      <p class="secure" data-en="Payments are processed by a secure, PCI-compliant provider. Card details are never stored on this website." data-ur="ادائیگیاں محفوظ، PCI کے مطابق فراہم کنندہ کے ذریعے ہوتی ہیں۔ کارڈ کی تفصیلات اس ویب سائٹ پر محفوظ نہیں کی جاتیں۔">Payments are processed by a secure, PCI-compliant provider. Card details are never stored on this website.</p>
+    </div>
+    <div class="pay-side">
+      <p data-en="Pay now for your enrolled course" data-ur="داخلہ شدہ کورس کی ابھی ادائیگی کریں">Pay now for your enrolled course</p>
+      <a class="btn btn-sky" id="payBtn" href="#" target="_blank" rel="noopener" data-en="Pay Online" data-ur="آن لائن ادائیگی کریں">Pay Online</a>
+    </div>
+  </div>
+</section>
+
+<section id="admission" class="tint">
+  <div class="wrap admit-wrap">
+    <div>
+      <p class="kicker" data-en="Join us" data-ur="ہمارے ساتھ شامل ہوں">Join us</p>
+      <h2 data-en="Admission form" data-ur="داخلہ فارم">Admission form</h2>
+      <p class="lead" data-en="Fill in the form and we will contact you on WhatsApp to confirm your course and timing." data-ur="فارم بھریں، ہم واٹس ایپ پر رابطہ کر کے کورس اور وقت کی تصدیق کریں گے۔">Fill in the form and we will contact you on WhatsApp to confirm your course and timing.</p>
+      <ol class="flow">
+        <li><span class="num">1</span><span data-en="Submit the form" data-ur="فارم جمع کریں">Submit the form</span></li>
+        <li><span class="num">2</span><span data-en="We confirm your course and timing" data-ur="ہم کورس اور وقت کی تصدیق کریں گے">We confirm your course and timing</span></li>
+        <li><span class="num">3</span><span data-en="Pay and start learning" data-ur="ادائیگی کریں اور تعلیم شروع کریں">Pay and start learning</span></li>
+      </ol>
+    </div>
+    <form id="admitForm">
+      <div><label for="sn" data-en="Student name" data-ur="طالب علم کا نام">Student name</label><input id="sn" required></div>
+      <div><label for="pn" data-en="Parent / guardian" data-ur="والد / سرپرست">Parent / guardian</label><input id="pn"></div>
+      <div><label for="ph" data-en="WhatsApp number" data-ur="واٹس ایپ نمبر">WhatsApp number</label><input id="ph" type="tel" required placeholder="+92 300 0000000"></div>
+      <div><label for="em" data-en="Email" data-ur="ای میل">Email</label><input id="em" type="email"></div>
+      <div><label for="ag" data-en="Age" data-ur="عمر">Age</label><input id="ag" type="number" min="3" max="99"></div>
+      <div><label for="cn" data-en="Country" data-ur="ملک">Country</label><input id="cn" placeholder="Pakistan / UAE / UK"></div>
+      <div class="full"><label for="co" data-en="Course area" data-ur="کورس کا شعبہ">Course area</label>
+        <select id="co">
+          <option>Qur'an Studies</option><option>Hadith Studies</option><option>Islamic Guidance</option><option>Islamic Studies</option><option>Arabic Language</option>
+        </select></div>
+      <div class="full"><label for="ms" data-en="Message (optional)" data-ur="پیغام (اختیاری)">Message (optional)</label><textarea id="ms"></textarea></div>
+      <div class="full"><button class="btn btn-blue" type="submit" style="width:100%" data-en="Send registration" data-ur="رجسٹریشن بھیجیں">Send registration</button></div>
+    </form>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="kicker" data-en="Contact us" data-ur="رابطہ کریں">Contact us</p>
+    <h2 data-en="We would love to hear from you" data-ur="ہم آپ کے سوال کے منتظر ہیں">We would love to hear from you</h2>
+    <div class="contact-grid" style="margin-top:2.2rem">
+      <div class="c"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><h3 data-en="Phone" data-ur="فون">Phone</h3><a href="tel:+923293779413">0329 3779413</a></div>
+      <div class="c"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><h3 data-en="Email" data-ur="ای میل">Email</h3><a href="mailto:ahyaulq@gmail.com">ahyaulq@gmail.com</a></div>
+      <div class="c"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></div><h3>WhatsApp</h3><a data-wa href="#" data-en="Chat with us" data-ur="ہم سے چیٹ کریں">Chat with us</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <span class="nm" data-name></span>
+    <span data-en="Bringing the Light of the Quran to Hearts Around the World." data-ur="قرآن کا نور دنیا بھر کے دلوں تک۔">Bringing the Light of the Quran to Hearts Around the World.</span>
+    <span>&copy; <span id="yr"></span></span>
+  </div>
+</footer>
+
+<a class="float-wa" data-wa href="#" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8.9-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.7-1.7c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.6.3 2.6 2.6 0 0 0-.8 2 4.5 4.5 0 0 0 .9 2.4 10.3 10.3 0 0 0 3.9 3.5c1.5.6 2.1.7 2.8.6a2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c0-.1-.2-.2-.5-.3z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+/* ===== EDIT THESE SETTINGS ===== */
+const CFG = {
+  name_en: "Ahya ul Quran Online Academy",
+  name_ur: "احیاء القرآن آن لائن اکیڈمی",
+  whatsapp: "923293779413",   // country code + number, no + or spaces
+  payUrl: "#",                // secure payment link (Stripe, PayPal, JazzCash, etc.)
+  sheetUrl: ""                 // Google Apps Script Web app URL (Step 1 of backend setup)
+};
+/* =============================== */
+
+const $ = s => document.querySelectorAll(s);
+let lang = "en";
+const H1 = {
+  en: "Bringing the <span>Light of the Quran</span> to hearts around the world",
+  ur: "قرآن کا <span>نور</span> دنیا بھر کے دلوں تک"
+};
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l === "ur" ? "ur" : "en";
+  document.documentElement.dir = l === "ur" ? "rtl" : "ltr";
+  $("[data-en]").forEach(el => { el.innerHTML = el.dataset[l === "ur" ? "ur" : "en"]; });
+  document.getElementById("h1").innerHTML = H1[l];
+  $("[data-name]").forEach(el => el.textContent = l === "ur" ? CFG.name_ur : CFG.name_en);
+  document.querySelector("[data-sub]").textContent = l === "ur" ? "آن لائن قرآن اکیڈمی" : "Online Quran Academy";
+  document.getElementById("langBtn").textContent = l === "ur" ? "English" : "اردو";
+  document.title = l === "ur" ? CFG.name_ur : CFG.name_en;
+  try { localStorage.setItem("ahya-lang", l); } catch(e){}
+}
+
+document.getElementById("langBtn").addEventListener("click", () => setLang(lang === "en" ? "ur" : "en"));
+
+document.getElementById("menuBtn").addEventListener("click", e => {
+  const open = document.getElementById("menu").classList.toggle("open");
+  e.currentTarget.setAttribute("aria-expanded", open);
+});
+$("#menu a").forEach(a => a.addEventListener("click", () => document.getElementById("menu").classList.remove("open")));
+
+const waLink = msg => `https://wa.me/${CFG.whatsapp}${msg ? "?text=" + encodeURIComponent(msg) : ""}`;
+$("[data-wa]").forEach(a => a.href = waLink("Assalamu Alaikum, I would like to know more about Ahya ul Quran Online Academy."));
+document.getElementById("payBtn").href = CFG.payUrl;
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+document.getElementById("admitForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim() || "-";
+  const msg = `Assalamu Alaikum, new registration request\n` +
+    `Student: ${v("sn")}\nParent: ${v("pn")}\nWhatsApp: ${v("ph")}\nEmail: ${v("em")}\n` +
+    `Age: ${v("ag")}\nCountry: ${v("cn")}\nCourse area: ${v("co")}\nMessage: ${v("ms")}`;
+  if (CFG.sheetUrl) {
+    const data = { student: v("sn"), parent: v("pn"), whatsapp: v("ph"), email: v("em"), age: v("ag"), country: v("cn"), course: v("co"), message: v("ms") };
+    fetch(CFG.sheetUrl, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(data) })
+      .then(() => { alert(lang === "ur" ? "شکریہ! آپ کی درخواست موصول ہو گئی ہے۔" : "Thank you! Your registration has been received."); e.target.reset(); })
+      .catch(() => window.open(waLink(msg), "_blank", "noopener"));
+  } else {
+    window.open(waLink(msg), "_blank", "noopener");
+  }
+});
+
+const saved = (() => { try { return localStorage.getItem("ahya-lang"); } catch(e){ return null; } })();
+setLang(saved === "ur" ? "ur" : "en");
+</script>
+</body>
+</html>
